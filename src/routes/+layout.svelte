@@ -1,6 +1,9 @@
 <script lang="ts">
 	import '../app.css';
-	let { children } = $props();
+	import type { LayoutData } from './$types';
+	import type { Snippet } from 'svelte';
+	let { children, data }: { children: Snippet, data: LayoutData} = $props();
 </script>
+
 
 {@render children()}

@@ -1,0 +1,65 @@
+.fak.fa-regular-buoy-circle-bolt::before, .fa-kit.fa-regular-buoy-circle-bolt::before { content: "\e020"; }
+.fak.fa-regular-buoy-circle-check::before, .fa-kit.fa-regular-buoy-circle-check::before { content: "\e004"; }
+.fak.fa-regular-buoy-circle-dollar::before, .fa-kit.fa-regular-buoy-circle-dollar::before { content: "\e01f"; }
+.fak.fa-regular-buoy-circle-exclamation::before, .fa-kit.fa-regular-buoy-circle-exclamation::before { content: "\e01e"; }
+.fak.fa-regular-buoy-circle-info::before, .fa-kit.fa-regular-buoy-circle-info::before { content: "\e01c"; }
+.fak.fa-regular-buoy-circle-minus::before, .fa-kit.fa-regular-buoy-circle-minus::before { content: "\e007"; }
+.fak.fa-regular-buoy-circle-plus::before, .fa-kit.fa-regular-buoy-circle-plus::before { content: "\e005"; }
+.fak.fa-regular-buoy-circle-question::before, .fa-kit.fa-regular-buoy-circle-question::before { content: "\e01d"; }
+.fak.fa-regular-buoy-circle-user::before, .fa-kit.fa-regular-buoy-circle-user::before { content: "\e00d"; }
+.fak.fa-regular-buoy-circle-xmark::before, .fa-kit.fa-regular-buoy-circle-xmark::before { content: "\e006"; }
+.fak.fa-regular-buoy-clock::before, .fa-kit.fa-regular-buoy-clock::before { content: "\e00c"; }
+.fak.fa-regular-buoy-gear::before, .fa-kit.fa-regular-buoy-gear::before { content: "\e008"; }
+.fak.fa-regular-buoy-magnifying-glass::before, .fa-kit.fa-regular-buoy-magnifying-glass::before { content: "\e00e"; }
+.fak.fa-regular-buoy-pen::before, .fa-kit.fa-regular-buoy-pen::before { content: "\e00a"; }
+.fak.fa-regular-buoy-signal::before, .fa-kit.fa-regular-buoy-signal::before { content: "\e00b"; }
+.fak.fa-regular-buoy-slash::before, .fa-kit.fa-regular-buoy-slash::before { content: "\e010"; }
+.fak.fa-regular-buoy-tag::before, .fa-kit.fa-regular-buoy-tag::before { content: "\e00f"; }
+.fak.fa-regular-buoy-user::before, .fa-kit.fa-regular-buoy-user::before { content: "\e009"; }
+.fak.fa-regular-file-excel-circle-arrow-down::before, .fa-kit.fa-regular-file-excel-circle-arrow-down::before { content: "\e002"; }
+.fak.fa-regular-file-spreadsheet-circle-arrow-down::before, .fa-kit.fa-regular-file-spreadsheet-circle-arrow-down::before { content: "\e001"; }
+.fak.fa-regular-gear-slash::before, .fa-kit.fa-regular-gear-slash::before { content: "\e02e"; }
+.fak.fa-regular-mobile-slash::before, .fa-kit.fa-regular-mobile-slash::before { content: "\e000"; }
+.fak.fa-regular-repeat-slash::before, .fa-kit.fa-regular-repeat-slash::before { content: "\e02d"; }
+.fak.fa-regular-ship-circle-bolt::before, .fa-kit.fa-regular-ship-circle-bolt::before { content: "\e019"; }
+.fak.fa-regular-ship-circle-check::before, .fa-kit.fa-regular-ship-circle-check::before { content: "\e011"; }
+.fak.fa-regular-ship-circle-dollar::before, .fa-kit.fa-regular-ship-circle-dollar::before { content: "\e018"; }
+.fak.fa-regular-ship-circle-exclamation::before, .fa-kit.fa-regular-ship-circle-exclamation::before { content: "\e017"; }
+.fak.fa-regular-ship-circle-info::before, .fa-kit.fa-regular-ship-circle-info::before { content: "\e015"; }
+.fak.fa-regular-ship-circle-minus::before, .fa-kit.fa-regular-ship-circle-minus::before { content: "\e014"; }
+.fak.fa-regular-ship-circle-plus::before, .fa-kit.fa-regular-ship-circle-plus::before { content: "\e012"; }
+.fak.fa-regular-ship-circle-question::before, .fa-kit.fa-regular-ship-circle-question::before { content: "\e016"; }
+.fak.fa-regular-ship-circle-user::before, .fa-kit.fa-regular-ship-circle-user::before { content: "\e022"; }
+.fak.fa-regular-ship-circle-xmark::before, .fa-kit.fa-regular-ship-circle-xmark::before { content: "\e013"; }
+.fak.fa-regular-ship-clock::before, .fa-kit.fa-regular-ship-clock::before { content: "\e021"; }
+.fak.fa-regular-ship-gear::before, .fa-kit.fa-regular-ship-gear::before { content: "\e01b"; }
+.fak.fa-regular-ship-magnifying-glass::before, .fa-kit.fa-regular-ship-magnifying-glass::before { content: "\e01a"; }
+.fak.fa-regular-upload-circle-exclamation::before, .fa-kit.fa-regular-upload-circle-exclamation::before { content: "\e003"; }
+.fak.fa-regular-user-circle-check::before, .fa-kit.fa-regular-user-circle-check::before { content: "\e023"; }
+.fak.fa-regular-user-circle-dollar::before, .fa-kit.fa-regular-user-circle-dollar::before { content: "\e02a"; }
+.fak.fa-regular-user-circle-exclamation::before, .fa-kit.fa-regular-user-circle-exclamation::before { content: "\e029"; }
+.fak.fa-regular-user-circle-info::before, .fa-kit.fa-regular-user-circle-info::before { content: "\e027"; }
+.fak.fa-regular-user-circle-minus::before, .fa-kit.fa-regular-user-circle-minus::before { content: "\e026"; }
+.fak.fa-regular-user-circle-plus::before, .fa-kit.fa-regular-user-circle-plus::before { content: "\e024"; }
+.fak.fa-regular-user-circle-question::before, .fa-kit.fa-regular-user-circle-question::before { content: "\e028"; }
+.fak.fa-regular-user-circle-xmark::before, .fa-kit.fa-regular-user-circle-xmark::before { content: "\e025"; }
+.fak.fa-regular-user-clock::before, .fa-kit.fa-regular-user-clock::before { content: "\e02b"; }
+.fak.fa-regular-user-magnifying-glass::before, .fa-kit.fa-regular-user-magnifying-glass::before { content: "\e02c"; }
+
+.fak, .fa-kit {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-family: "Font Awesome Kit";
+}
+
+@font-face {
+  font-family: "Font Awesome Kit";
+  font-style: normal;
+  font-display: block;
+  src: url("../webfonts/custom-icons.woff2") format("woff2"), url("../webfonts/custom-icons.ttf") format("truetype");
+}

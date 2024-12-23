@@ -1,78 +1,6 @@
 [
 	{
 		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"heading": {
-				"__TYPE__": "FieldContent",
-				"value": "chose",
-				"type": "Text"
-			},
-			"subheading": {
-				"__TYPE__": "FieldContent",
-				"value": "lost",
-				"type": "Text"
-			},
-			"alignment": {
-				"__TYPE__": "FieldContent",
-				"value": "center",
-				"type": "Select"
-			},
-			"background": {
-				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
-					"width": 3935,
-					"height": 5894
-				},
-				"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
-				"width": 3935,
-				"height": 5894,
-				"edit": {
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					},
-					"background": "transparent"
-				},
-				"credits": null,
-				"alt": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
-			},
-			"cta_link": {
-				"key": "c0777f72-eec1-45c0-8cac-9cc9a23c6f6d",
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "https://prismic.io",
-					"text": "tonight"
-				}
-			},
-			"cta_secondary_link": {
-				"key": "8a0836f9-b7a9-491a-af2a-85da932dfec4",
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "http://google.com",
-					"text": "another"
-				}
-			},
-			"overlay": {
-				"__TYPE__": "BooleanContent",
-				"value": true
-			},
-			"theme": {
-				"__TYPE__": "FieldContent",
-				"value": "dark",
-				"type": "Select"
-			}
-		},
-		"items": []
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
 		"variation": "withVideo",
 		"primary": {
 			"heading": {
@@ -137,5 +65,77 @@
 				"value": []
 			}
 		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "En helt ny måte å overvåke kysten på."
+			},
+			"subheading": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Overvåk kysten effektivt med våre elektriske, ubemannede båter. Innovasjon møter bærekraft."
+			},
+			"alignment": {
+				"__TYPE__": "FieldContent",
+				"value": "center",
+				"type": "Select"
+			},
+			"background": {
+				"__TYPE__": "ImageContent",
+				"provider": "imgix",
+				"url": "https://images.unsplash.com/photo-1523819088009-c3ecf1e34000?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNXx8ZmpvcmR8ZW58MHx8fHwxNzM0OTQ5OTEwfDA&ixlib=rb-4.0.3&q=85",
+				"alt": "hills between body of water",
+				"origin": {
+					"id": "EezLu2p93uM",
+					"url": "https://images.unsplash.com/photo-1523819088009-c3ecf1e34000?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNXx8ZmpvcmR8ZW58MHx8fHwxNzM0OTQ5OTEwfDA&ixlib=rb-4.0.3&q=85",
+					"width": 4896,
+					"height": 3264
+				},
+				"width": 4896,
+				"height": 3264,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"thumbnails": {}
+			},
+			"cta_link": {
+				"key": "c0777f72-eec1-45c0-8cac-9cc9a23c6f6d",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io",
+					"text": "Kontakt oss"
+				}
+			},
+			"cta_secondary_link": {
+				"key": "8a0836f9-b7a9-491a-af2a-85da932dfec4",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "Log inn"
+				}
+			},
+			"overlay": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"theme": {
+				"__TYPE__": "FieldContent",
+				"value": "dark",
+				"type": "Select"
+			}
+		},
+		"items": []
 	}
 ]

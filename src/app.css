@@ -85,7 +85,7 @@
     --foreground: var(--base-50);
  
     --muted: var(--base-800);
-    --muted-foreground: var(--base-400);
+    --muted-foreground: var(--base-300);
  
     --popover: 224 71.4% 4.1%;
     --popover-foreground: 210 20% 98%;
