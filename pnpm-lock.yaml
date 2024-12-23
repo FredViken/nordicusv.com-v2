@@ -26,6 +26,9 @@ importers:
       concurrently:
         specifier: ^9.1.0
         version: 9.1.0
+      mini-svg-data-uri:
+        specifier: ^1.4.4
+        version: 1.4.4
     devDependencies:
       '@eslint/compat':
         specifier: ^1.2.3

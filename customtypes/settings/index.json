@@ -1,0 +1,37 @@
+{
+	"format": "custom",
+	"id": "settings",
+	"label": "Settings",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Navigation": {
+			"cta_link": {
+				"type": "Link",
+				"config": {
+					"label": "CTA Link",
+					"placeholder": "",
+					"select": null,
+					"allowTargetBlank": true,
+					"allowText": true,
+					"repeat": false
+				}
+			},
+			"cta_secondary_link": {
+				"type": "Link",
+				"config": {
+					"label": "CTA Secondary Link",
+					"placeholder": "",
+					"select": null,
+					"allowTargetBlank": true,
+					"allowText": true,
+					"repeat": false
+				}
+			},
+			"slices": {
+				"type": "Slices",
+				"fieldset": "Slice Zone"
+			}
+		}
+	}
+}

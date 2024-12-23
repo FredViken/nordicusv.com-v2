@@ -1,0 +1,141 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "chose",
+				"type": "Text"
+			},
+			"subheading": {
+				"__TYPE__": "FieldContent",
+				"value": "lost",
+				"type": "Text"
+			},
+			"alignment": {
+				"__TYPE__": "FieldContent",
+				"value": "center",
+				"type": "Select"
+			},
+			"background": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
+					"width": 3935,
+					"height": 5894
+				},
+				"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
+				"width": 3935,
+				"height": 5894,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"cta_link": {
+				"key": "c0777f72-eec1-45c0-8cac-9cc9a23c6f6d",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io",
+					"text": "tonight"
+				}
+			},
+			"cta_secondary_link": {
+				"key": "8a0836f9-b7a9-491a-af2a-85da932dfec4",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "another"
+				}
+			},
+			"overlay": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"theme": {
+				"__TYPE__": "FieldContent",
+				"value": "dark",
+				"type": "Select"
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "withVideo",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "engineer",
+				"type": "Text"
+			},
+			"subheading": {
+				"__TYPE__": "FieldContent",
+				"value": "dinner",
+				"type": "Text"
+			},
+			"alignment": {
+				"__TYPE__": "FieldContent",
+				"value": "left",
+				"type": "Select"
+			},
+			"cta_link": {
+				"key": "da03afbc-094d-4839-b00d-ceb307a420b3",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "afternoon"
+				}
+			},
+			"cta_secondary_link": {
+				"key": "2438c211-bd04-44cc-adc3-026a60a2a047",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "universe"
+				}
+			},
+			"overlay": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"video_background": {
+				"key": "f6f779f2-bd5a-4123-9945-b37bb4414e82",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "FileLink",
+					"id": "mock_Media_link",
+					"kind": "file",
+					"name": "mock_name",
+					"url": "https://source.unsplash.com/daily",
+					"size": "0",
+					"text": "list"
+				}
+			},
+			"theme": {
+				"__TYPE__": "FieldContent",
+				"value": "dark",
+				"type": "Select"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]
