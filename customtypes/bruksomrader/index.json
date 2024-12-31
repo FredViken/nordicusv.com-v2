@@ -1,18 +1,15 @@
 {
 	"format": "page",
-	"id": "forside",
-	"label": "Forside",
-	"repeatable": false,
+	"id": "bruksomrader",
+	"label": "Bruksområder",
+	"repeatable": true,
 	"status": true,
 	"json": {
 		"Main": {
-			"navbar_theme": {
-				"type": "Select",
+			"uid": {
+				"type": "UID",
 				"config": {
-					"label": "Navbar theme",
-					"placeholder": "",
-					"options": ["dark", "light"],
-					"default_value": "dark"
+					"label": "UID"
 				}
 			},
 			"slices": {
@@ -20,9 +17,6 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
-						"marquee": {
-							"type": "SharedSlice"
-						},
 						"hero": {
 							"type": "SharedSlice"
 						}

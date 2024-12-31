@@ -4,12 +4,88 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type ForsideDocumentDataSlicesSlice = HeroSlice;
+type BruksomraderDocumentDataSlicesSlice = HeroSlice;
+
+/**
+ * Content for Bruksområder documents
+ */
+interface BruksomraderDocumentData {
+	/**
+	 * Slice Zone field in *Bruksområder*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bruksomrader.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#slices
+	 */
+	slices: prismic.SliceZone<BruksomraderDocumentDataSlicesSlice> /**
+	 * Meta Title field in *Bruksområder*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: bruksomrader.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */;
+	meta_title: prismic.KeyTextField;
+
+	/**
+	 * Meta Description field in *Bruksområder*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: bruksomrader.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	meta_description: prismic.KeyTextField;
+
+	/**
+	 * Meta Image field in *Bruksområder*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bruksomrader.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Bruksområder document from Prismic
+ *
+ * - **API ID**: `bruksomrader`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BruksomraderDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<
+	Simplify<BruksomraderDocumentData>,
+	'bruksomrader',
+	Lang
+>;
+
+type ForsideDocumentDataSlicesSlice = MarqueeSlice | HeroSlice;
 
 /**
  * Content for Forside documents
  */
 interface ForsideDocumentData {
+	/**
+	 * Navbar theme field in *Forside*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: dark
+	 * - **API ID Path**: forside.navbar_theme
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	navbar_theme: prismic.SelectField<'dark' | 'light', 'filled'>;
+
 	/**
 	 * Slice Zone field in *Forside*
 	 *
@@ -68,7 +144,7 @@ export type ForsideDocument<Lang extends string = string> = prismic.PrismicDocum
 	Lang
 >;
 
-type SettingsDocumentDataSlicesSlice = never;
+type SettingsDocumentDataSlicesSlice = NavigationItemSlice;
 
 /**
  * Content for Settings documents
@@ -97,7 +173,7 @@ interface SettingsDocumentData {
 	cta_secondary_link: prismic.LinkField;
 
 	/**
-	 * `slices` field in *Settings*
+	 * Slice Zone field in *Settings*
 	 *
 	 * - **Field Type**: Slice Zone
 	 * - **Placeholder**: *None*
@@ -123,7 +199,7 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 	Lang
 >;
 
-export type AllDocumentTypes = ForsideDocument | SettingsDocument;
+export type AllDocumentTypes = BruksomraderDocument | ForsideDocument | SettingsDocument;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -341,6 +417,201 @@ type HeroSliceVariation = HeroSliceDefault | HeroSliceWithVideo;
  */
 export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>;
 
+/**
+ * Item in *Marquee → Default → Primary → Items*
+ */
+export interface MarqueeSliceDefaultPrimaryItemsItem {
+	/**
+	 * Image field in *Marquee → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: marquee.default.primary.items[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Marquee → Default → Primary*
+ */
+export interface MarqueeSliceDefaultPrimary {
+	/**
+	 * Heading field in *Marquee → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: marquee.default.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	heading: prismic.KeyTextField;
+
+	/**
+	 * Items field in *Marquee → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: marquee.default.primary.items[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	items: prismic.GroupField<Simplify<MarqueeSliceDefaultPrimaryItemsItem>>;
+
+	/**
+	 * Speed field in *Marquee → Default → Primary*
+	 *
+	 * - **Field Type**: Number
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: marquee.default.primary.speed
+	 * - **Documentation**: https://prismic.io/docs/field#number
+	 */
+	speed: prismic.NumberField;
+}
+
+/**
+ * Default variation for Marquee Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MarqueeSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<MarqueeSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *Marquee*
+ */
+type MarqueeSliceVariation = MarqueeSliceDefault;
+
+/**
+ * Marquee Shared Slice
+ *
+ * - **API ID**: `marquee`
+ * - **Description**: Marquee
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MarqueeSlice = prismic.SharedSlice<'marquee', MarqueeSliceVariation>;
+
+/**
+ * Item in *NavigationItem → With dropdown → Primary → Sub Menu*
+ */
+export interface NavigationItemSliceWithDropdownPrimaryItemsItem {
+	/**
+	 * Link field in *NavigationItem → With dropdown → Primary → Sub Menu*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation_item.withDropdown.primary.items[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+
+	/**
+	 * icon field in *NavigationItem → With dropdown → Primary → Sub Menu*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation_item.withDropdown.primary.items[].icon
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	icon: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *NavigationItem → Default → Primary*
+ */
+export interface NavigationItemSliceDefaultPrimary {
+	/**
+	 * Link field in *NavigationItem → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation_item.default.primary.link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+}
+
+/**
+ * Default variation for NavigationItem Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationItemSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<NavigationItemSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Primary content in *NavigationItem → With dropdown → Primary*
+ */
+export interface NavigationItemSliceWithDropdownPrimary {
+	/**
+	 * Link field in *NavigationItem → With dropdown → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation_item.withDropdown.primary.link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+
+	/**
+	 * Description field in *NavigationItem → With dropdown → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation_item.withDropdown.primary.description
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	description: prismic.KeyTextField;
+
+	/**
+	 * Sub Menu field in *NavigationItem → With dropdown → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation_item.withDropdown.primary.items[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	items: prismic.GroupField<Simplify<NavigationItemSliceWithDropdownPrimaryItemsItem>>;
+}
+
+/**
+ * With dropdown variation for NavigationItem Slice
+ *
+ * - **API ID**: `withDropdown`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationItemSliceWithDropdown = prismic.SharedSliceVariation<
+	'withDropdown',
+	Simplify<NavigationItemSliceWithDropdownPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *NavigationItem*
+ */
+type NavigationItemSliceVariation = NavigationItemSliceDefault | NavigationItemSliceWithDropdown;
+
+/**
+ * NavigationItem Shared Slice
+ *
+ * - **API ID**: `navigation_item`
+ * - **Description**: NavigationItem
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationItemSlice = prismic.SharedSlice<
+	'navigation_item',
+	NavigationItemSliceVariation
+>;
+
 declare module '@prismicio/client' {
 	interface CreateClient {
 		(
@@ -362,6 +633,9 @@ declare module '@prismicio/client' {
 
 	namespace Content {
 		export type {
+			BruksomraderDocument,
+			BruksomraderDocumentData,
+			BruksomraderDocumentDataSlicesSlice,
 			ForsideDocument,
 			ForsideDocumentData,
 			ForsideDocumentDataSlicesSlice,
@@ -374,7 +648,19 @@ declare module '@prismicio/client' {
 			HeroSliceWithVideoPrimary,
 			HeroSliceVariation,
 			HeroSliceDefault,
-			HeroSliceWithVideo
+			HeroSliceWithVideo,
+			MarqueeSlice,
+			MarqueeSliceDefaultPrimaryItemsItem,
+			MarqueeSliceDefaultPrimary,
+			MarqueeSliceVariation,
+			MarqueeSliceDefault,
+			NavigationItemSlice,
+			NavigationItemSliceDefaultPrimary,
+			NavigationItemSliceWithDropdownPrimaryItemsItem,
+			NavigationItemSliceWithDropdownPrimary,
+			NavigationItemSliceVariation,
+			NavigationItemSliceDefault,
+			NavigationItemSliceWithDropdown
 		};
 	}
 }

@@ -98,8 +98,8 @@ const config: Config = {
 			},
 			fontFamily: {
 				heading: ['Lato', ...fontFamily.sans],
-				sans: ['Nunito-Sans', ...fontFamily.sans],
-				squadaOne: ['Squada One', ...fontFamily.sans]
+				sans: ['Noto Sans JP Variable', ...fontFamily.sans],
+				squada: ['Squada One', ...fontFamily.sans]
 			},
 			keyframes: {
 				'accordion-down': {
@@ -113,12 +113,22 @@ const config: Config = {
 				'caret-blink': {
 					'0%,70%,100%': { opacity: '1' },
 					'20%,50%': { opacity: '0' }
+				},
+				'scale-in': {
+					'0%': { opacity: '0', transform: 'translateY(-1rem)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'scale-out': {
+					'0%': { opacity: '1', transform: 'translateY(0)' },
+					'100%': { opacity: '0', transform: 'translateY(-2rem)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'caret-blink': 'caret-blink 1.25s ease-out infinite'
+				'caret-blink': 'caret-blink 1.25s ease-out infinite',
+				'scale-in': 'scale-in 0.2s ease-out',
+				'scale-out': 'scale-out 0.2s ease-out'
 			}
 		}
 	},
