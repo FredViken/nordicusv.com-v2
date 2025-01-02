@@ -1,37 +1,60 @@
 <script lang="ts">
-	import type { NavigationItemSlice, SettingsDocumentData } from '../../../../prismicio-types';
 	import { navbarState } from './state.svelte';
-	import * as Sheet from '$lib/components/ui/sheet/index.js';
 	import HamburgerIcon from './hamburger-icon.svelte';
-	import Item from './item.svelte';
-	import { PrismicLink } from '@prismicio/svelte';
 	import type { Snippet } from 'svelte';
 	import { NavigationMenu } from 'bits-ui';
-	import { slide } from 'svelte/transition';
+	import { cn } from '$lib/utils';
 
 	let { children, cta }: { children: Snippet; cta: Snippet } = $props();
-	const themes = {
-		light: 'text-base-950',
-		dark: 'text-base-50'
+
+	// Base styles that are always applied
+	const baseStyles = {
+		nav: 'fixed left-0 right-0 top-0 z-50 h-16 w-full duration-300',
+		container:
+			'container relative z-50 mx-auto flex h-full items-center justify-between px-6 md:px-12',
+		viewport:
+			'origin-top-center relative h-[var(--bits-navigation-menu-viewport-height)] w-full overflow-hidden bg-background text-popover-foreground shadow-lg md:w-[var(--bits-navigation-menu-viewport-width)]'
 	};
+
+	// State-based style variants
+	const variants = {
+		theme: {
+			light: 'text-base-950',
+			dark: 'text-base-50'
+		},
+		visibility: {
+			visible: 'translate-y-0',
+			hidden: '-translate-y-full'
+		},
+		background: {
+			transparent: 'bg-transparent',
+			solid: 'bg-base-50/75 text-base-950 backdrop-blur-md'
+		}
+	};
+
+	// Compute navbar state classes
+	let navClasses = $derived(
+		cn(
+			baseStyles.nav,
+			variants.theme[navbarState.theme],
+			navbarState.isVisible ? variants.visibility.visible : variants.visibility.hidden,
+			navbarState.isScrolled || navbarState.mobileExpanded || navbarState.dropdown
+				? variants.background.solid
+				: variants.background.transparent
+		)
+	);
 </script>
 
 <NavigationMenu.Root
 	data-state={navbarState.dropdown ? 'open' : 'closed'}
 	onValueChange={(value) => {
 		navbarState.dropdown = value;
-		console.log(navbarState.dropdown);
 	}}
-	class="fixed left-0 right-0 top-0 z-50 h-16 w-full duration-300 {themes[
-		navbarState.theme
-	]} {!navbarState.isVisible ? '-translate-y-full' : 'translate-y-0'} {navbarState.isScrolled ||
-	navbarState.mobileExpanded
-		? 'bg-base-50/75 text-base-950 backdrop-blur-md'
-		: 'bg-transparent'} data-[state=open]:bg-base-50/75 data-[state=open]:text-base-950 data-[state=open]:backdrop-blur-md"
+	class={navClasses}
 >
 	<div>
 		<div
-			class="container relative z-50 mx-auto flex h-full items-center justify-between px-6 md:px-12"
+			class="lg:container px-6 md:px-12 relative z-50 mx-auto flex h-full items-center justify-between text-sm lg:text-base"
 		>
 			<!-- Logo -->
 			<div class="flex items-center justify-between py-4">
@@ -47,9 +70,9 @@
 				{@render children()}
 			</NavigationMenu.List>
 
-			<NavigationMenu.List  class="hidden h-full items-center justify-center gap-2 md:flex">
+			<NavigationMenu.List class="hidden h-full items-center justify-center gap-2 md:flex">
 				{@render cta()}
-			</NavigationMenu.List >
+			</NavigationMenu.List>
 
 			<!-- Nav items (mobile) -->
 			<div class="md:hidden">
@@ -75,7 +98,7 @@
 	</div>
 	<div class=" left-0 top-[calc(4rem-4px)] z-50 flex w-full justify-center overflow-hidden">
 		<NavigationMenu.Viewport
-			class="origin-top-center data-[state=closed]:animate-scale-out data-[state=open]:animate-scale-in relative h-[var(--bits-navigation-menu-viewport-height)] w-full overflow-hidden bg-background text-popover-foreground shadow-lg md:w-[var(--bits-navigation-menu-viewport-width)]"
+			class="border-y data-[state=closed]:animate-scale-out data-[state=open]:animate-scale-in relative h-[var(--bits-navigation-menu-viewport-height)] w-full overflow-hidden bg-background text-popover-foreground shadow-lg md:w-[var(--bits-navigation-menu-viewport-width)]"
 		/>
 	</div>
 </NavigationMenu.Root>

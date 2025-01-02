@@ -61,7 +61,7 @@
 	{/if}
 
 	<!-- Content -->
-	<div class="container relative mx-auto px-6 py-24 text-brand-950 dark:text-white md:px-12">
+	<div class="container relative mx-auto py-24 text-brand-950 dark:text-white">
 		<div
 			class="flex max-w-2xl flex-col {alignment == 'center'
 				? 'mx-auto items-center text-center'
