@@ -14,11 +14,12 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			$components: './src/lib/components',
-			$utils: './src/lib/utils',
+			$ui: './src/lib/components/ui',
+			$utils: './src/lib/utils'
 		},
 		paths: {
-			relative: false,
-		},
+			relative: false
+		}
 	}
 };
 

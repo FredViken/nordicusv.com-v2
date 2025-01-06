@@ -68,7 +68,7 @@ export type BruksomraderDocument<Lang extends string = string> = prismic.Prismic
 	Lang
 >;
 
-type ForsideDocumentDataSlicesSlice = MarqueeSlice | HeroSlice;
+type ForsideDocumentDataSlicesSlice = GridSlice | MarqueeSlice | HeroSlice;
 
 /**
  * Content for Forside documents
@@ -200,6 +200,219 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 >;
 
 export type AllDocumentTypes = BruksomraderDocument | ForsideDocument | SettingsDocument;
+
+/**
+ * Item in *Grid → Default → Primary → Items*
+ */
+export interface GridSliceDefaultPrimaryItemsItem {
+	/**
+	 * Alignment field in *Grid → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: grid.default.primary.items[].alignment
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	alignment: prismic.SelectField<'left' | 'center' | 'right'>;
+
+	/**
+	 * Badge icon field in *Grid → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: grid.default.primary.items[].icon
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	icon: prismic.KeyTextField;
+
+	/**
+	 * Badge text field in *Grid → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: grid.default.primary.items[].badge_text
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	badge_text: prismic.KeyTextField;
+
+	/**
+	 * Heading field in *Grid → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: grid.default.primary.items[].heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.RichTextField;
+
+	/**
+	 * Body field in *Grid → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: grid.default.primary.items[].body
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	body: prismic.RichTextField;
+
+	/**
+	 * Media field in *Grid → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: None
+	 * - **API ID Path**: grid.default.primary.items[].media
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	media: prismic.SelectField<'None' | 'Image' | 'Custom', 'filled'>;
+
+	/**
+	 * Image field in *Grid → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: grid.default.primary.items[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * Column span field in *Grid → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Number
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: grid.default.primary.items[].column_span
+	 * - **Documentation**: https://prismic.io/docs/field#number
+	 */
+	column_span: prismic.NumberField;
+
+	/**
+	 * Row span field in *Grid → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Number
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: grid.default.primary.items[].row_span
+	 * - **Documentation**: https://prismic.io/docs/field#number
+	 */
+	row_span: prismic.NumberField;
+
+	/**
+	 * Shadow field in *Grid → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: grid.default.primary.items[].shadow
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	shadow: prismic.BooleanField;
+
+	/**
+	 * Padding X field in *Grid → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: true
+	 * - **API ID Path**: grid.default.primary.items[].padding_x
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	padding_x: prismic.BooleanField;
+
+	/**
+	 * Custom media field in *Grid → Default → Primary → Items*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: buoys
+	 * - **API ID Path**: grid.default.primary.items[].custom_media
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	custom_media: prismic.SelectField<'buoys' | 'ctd', 'filled'>;
+}
+
+/**
+ * Primary content in *Grid → Default → Primary*
+ */
+export interface GridSliceDefaultPrimary {
+	/**
+	 * Columns field in *Grid → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: grid.default.primary.columns
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	columns: prismic.KeyTextField;
+
+	/**
+	 * Rows field in *Grid → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: grid.default.primary.rows
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	rows: prismic.KeyTextField;
+
+	/**
+	 * Fade top field in *Grid → Default → Primary*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: grid.default.primary.fade_top
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	fade_top: prismic.BooleanField;
+
+	/**
+	 * Fade bottom field in *Grid → Default → Primary*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: grid.default.primary.fade_bottom
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	fade_bottom: prismic.BooleanField;
+
+	/**
+	 * Items field in *Grid → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: grid.default.primary.items[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	items: prismic.GroupField<Simplify<GridSliceDefaultPrimaryItemsItem>>;
+}
+
+/**
+ * Default variation for Grid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GridSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<GridSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *Grid*
+ */
+type GridSliceVariation = GridSliceDefault;
+
+/**
+ * Grid Shared Slice
+ *
+ * - **API ID**: `grid`
+ * - **Description**: Grid
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GridSlice = prismic.SharedSlice<'grid', GridSliceVariation>;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -643,6 +856,11 @@ declare module '@prismicio/client' {
 			SettingsDocumentData,
 			SettingsDocumentDataSlicesSlice,
 			AllDocumentTypes,
+			GridSlice,
+			GridSliceDefaultPrimaryItemsItem,
+			GridSliceDefaultPrimary,
+			GridSliceVariation,
+			GridSliceDefault,
 			HeroSlice,
 			HeroSliceDefaultPrimary,
 			HeroSliceWithVideoPrimary,

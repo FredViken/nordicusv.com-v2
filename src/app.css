@@ -1,131 +1,130 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
-  :root {
-    --background: var(--base-50);
-    --foreground: var(--base-900);
- 
-    --muted: var(--base-200);
-    --muted-foreground: var(--base-500);
- 
-    --popover: var(--base-50);
-    --popover-foreground: var(--base-900);
- 
-    --card: var(--base-50);
-    --card-foreground: var(--base-900);
- 
-    --border: var(--base-300);
-    --input: var(--base-300);
- 
-    --primary: var(--brand-900);
-    --primary-foreground: var(--base-50);
-    --primary-hover: var(--brand-800);
- 
-    --secondary: var(--base-200);
-    --secondary-foreground: var(--brand-900);
-    --secondary-hover: var(--base-300);
- 
-    --accent: var(--base-200);
-    --accent-foreground: var(--base-900);
- 
-    --destructive: var(--danger-800);
-    --destructive-foreground:  var(--base-50);
-    --destructive-hover: var(--danger-700);
- 
-    --ring: var(--brand-700);
- 
-    --radius: 0.675rem;
+	:root {
+		--background: var(--base-50);
+		--foreground: var(--base-900);
 
-    /* Base colors */
+		--muted: var(--base-200);
+		--muted-foreground: var(--base-500);
 
-    /* Base color */
-    --base-50: 210 20% 98%;
-    --base-100: 220 14.3% 95.9%;
-    --base-200: 220 13% 91%;
-    --base-300: 216 12% 84%;
-    --base-400: 218 11% 65%;
-    --base-500: 220 9% 46%;
-    --base-600: 215 14% 34%;
-    --base-700: 217 19% 27%;
-    --base-800: 215 28% 17%;
-    --base-900: 221 39% 11%;
-    --base-950: 224 71% 4%;
+		--popover: var(--base-50);
+		--popover-foreground: var(--base-900);
 
-    /* Brand color */
-    --brand-50: 186deg 100% 96%;
-    --brand-100: 187 100% 90%;
-    --brand-200: 189 100% 82%;
-    --brand-300: 189 97% 69%;
-    --brand-400: 191 91% 53%;
-    --brand-500: 191 100% 45%;
-    --brand-600: 194 97% 36%;
-    --brand-700: 196 87% 31%;
-    --brand-800: 197 74% 27%;
-    --brand-900: 199 67% 24%;
-    --brand-950: 200 84% 15%;
+		--card: var(--base-50);
+		--card-foreground: var(--base-900);
 
-    /* Danger color */
-    --danger-50: 0 86% 97%;
-    --danger-100: 0 93% 94%;
-    --danger-200: 0 100% 89%;
-    --danger-300: 0 96% 82%;
-    --danger-400: 0 92% 71%;
-    --danger-500: 0 86% 60%;
-    --danger-600: 0 74% 49%;
-    --danger-700: 0 76% 42%;
-    --danger-800: 0 71% 35%;
-    --danger-900: 0 64% 31%;
-    --danger-950: 0 77% 15%;
-  }
- 
-  .dark {
-    --background: var(--base-900);
-    --foreground: var(--base-50);
- 
-    --muted: var(--base-800);
-    --muted-foreground: var(--base-300);
- 
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
- 
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
- 
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
- 
-    --primary: var(--brand-500);
-    --primary-foreground: 220.9 39.3% 11%;
- 
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
- 
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
- 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
- 
-    --ring: 216 12.2% 83.9%;
-    
-  }
+		--border: var(--base-300);
+		--input: var(--base-300);
+
+		--primary: var(--brand-900);
+		--primary-foreground: var(--base-50);
+		--primary-hover: var(--brand-800);
+
+		--secondary: var(--base-200);
+		--secondary-foreground: var(--brand-900);
+		--secondary-hover: var(--base-300);
+
+		--accent: var(--base-200);
+		--accent-foreground: var(--base-900);
+
+		--destructive: var(--danger-800);
+		--destructive-foreground: var(--base-50);
+		--destructive-hover: var(--danger-700);
+
+		--ring: var(--brand-700);
+
+		--radius: 0.675rem;
+
+		/* Base colors */
+
+		/* Base color */
+		--base-50: 210 20% 98%;
+		--base-100: 220 14.3% 95.9%;
+		--base-200: 220 13% 91%;
+		--base-300: 216 12% 84%;
+		--base-400: 218 11% 65%;
+		--base-500: 220 9% 46%;
+		--base-600: 215 14% 34%;
+		--base-700: 217 19% 27%;
+		--base-800: 215 28% 17%;
+		--base-900: 221 39% 11%;
+		--base-950: 224 71% 4%;
+
+		/* Brand color */
+		--brand-50: 186deg 100% 96%;
+		--brand-100: 187 100% 90%;
+		--brand-200: 189 100% 82%;
+		--brand-300: 189 97% 69%;
+		--brand-400: 191 91% 53%;
+		--brand-500: 191 100% 45%;
+		--brand-600: 194 97% 36%;
+		--brand-700: 196 87% 31%;
+		--brand-800: 197 74% 27%;
+		--brand-900: 199 67% 24%;
+		--brand-950: 200 84% 15%;
+
+		/* Danger color */
+		--danger-50: 0 86% 97%;
+		--danger-100: 0 93% 94%;
+		--danger-200: 0 100% 89%;
+		--danger-300: 0 96% 82%;
+		--danger-400: 0 92% 71%;
+		--danger-500: 0 86% 60%;
+		--danger-600: 0 74% 49%;
+		--danger-700: 0 76% 42%;
+		--danger-800: 0 71% 35%;
+		--danger-900: 0 64% 31%;
+		--danger-950: 0 77% 15%;
+	}
+
+	.dark {
+		--background: var(--base-900);
+		--foreground: var(--base-50);
+
+		--muted: var(--base-800);
+		--muted-foreground: var(--base-300);
+
+		--popover: 224 71.4% 4.1%;
+		--popover-foreground: 210 20% 98%;
+
+		--card: 224 71.4% 4.1%;
+		--card-foreground: 210 20% 98%;
+
+		--border: 215 27.9% 16.9%;
+		--input: 215 27.9% 16.9%;
+
+		--primary: var(--brand-500);
+		--primary-foreground: 220.9 39.3% 11%;
+
+		--secondary: 215 27.9% 16.9%;
+		--secondary-foreground: 210 20% 98%;
+
+		--accent: 215 27.9% 16.9%;
+		--accent-foreground: 210 20% 98%;
+
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 210 20% 98%;
+
+		--ring: 216 12.2% 83.9%;
+	}
 }
- 
+
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
 }
 @layer utilities {
 	.step {
 		counter-increment: step;
 	}
- 
+
 	.step:before {
 		@apply absolute inline-flex h-9 w-9 items-center justify-center rounded-full border-4 border-background bg-muted text-center -indent-px font-mono text-base font-medium;
 		@apply ml-[-50px] mt-[-4px];
