@@ -4,6 +4,9 @@
 	import type { Snippet } from 'svelte';
 	import { NavigationMenu } from 'bits-ui';
 	import { cn } from '$lib/utils';
+	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
+	import { animate, stagger } from 'motion';
+	import { fade } from 'svelte/transition';
 
 	let { children, cta }: { children: Snippet; cta: Snippet } = $props();
 
@@ -28,7 +31,7 @@
 		},
 		background: {
 			transparent: 'bg-transparent',
-			solid: 'bg-base-50/75 text-base-950 backdrop-blur-md'
+			solid: 'bg-base-50/75 text-base-950 backdrop-blur-md shadow-sm'
 		}
 	};
 
@@ -43,6 +46,20 @@
 				: variants.background.transparent
 		)
 	);
+
+	function animateMobileMenu(element: HTMLElement) {
+		console.log(element.querySelectorAll('.stagger-item'));
+		animate(
+			element.querySelectorAll('.stagger-item'), // Target all list items
+			{
+				y: [30, 0],
+				opacity: [0, 1]
+			},
+			{
+				delay: stagger(0.075) // 100ms delay between each item
+			}
+		);
+	}
 </script>
 
 <NavigationMenu.Root
@@ -54,23 +71,23 @@
 >
 	<div>
 		<div
-			class="lg:container px-6 md:px-12 relative z-50 mx-auto flex h-full items-center justify-between text-sm lg:text-base"
+			class="relative z-50 mx-auto flex h-full items-center justify-between px-6 text-sm lg:container md:grid md:grid-cols-[1fr,auto,1fr] md:px-12"
 		>
 			<!-- Logo -->
 			<div class="flex items-center justify-between py-4">
-				<a href="/" class="flex items-center gap-2">
+				<a href="/" class="flex items-center gap-2 truncate">
 					<img src="/logo.svg" alt="Logo" class="h-8" />
-					<span class="font-squada text-2xl uppercase">Nordic USV</span>
+					<span class="truncate font-squada text-2xl uppercase">Nordic USV</span>
 				</a>
 			</div>
 
 			<!-- Nav items (desktop) -->
 
-			<NavigationMenu.List class="hidden h-16 items-center justify-center gap-2 md:flex">
+			<NavigationMenu.List class="mx-auto hidden h-16 items-center justify-center gap-2 md:flex">
 				{@render children()}
 			</NavigationMenu.List>
 
-			<NavigationMenu.List class="hidden h-full items-center justify-center gap-2 md:flex">
+			<NavigationMenu.List class="mx-auto hidden h-full items-center justify-end gap-2 md:flex">
 				{@render cta()}
 			</NavigationMenu.List>
 
@@ -79,18 +96,26 @@
 				<!-- Hamburger icon -->
 				<button
 					class="flex size-8 items-center justify-center rounded-sm delay-0"
-					onclick={() => (navbarState.mobileExpanded = !navbarState.mobileExpanded)}
+					onclick={() => navbarState.toggleMobileDropdown()}
 				>
 					<HamburgerIcon open={navbarState.mobileExpanded} />
 				</button>
 
 				<!-- Nav content -->
-				{#if navbarState.mobileExpanded}
+				{#if navbarState.mobileExpanded && navbarState.isMobile}
 					<div
-						class="fixed left-0 top-16 flex h-[calc(100vh-4rem)] w-full flex-col gap-4 overscroll-contain border-t bg-background px-6 text-base-950 md:hidden"
+						transition:fade={{ duration: 100 }}
+						use:animateMobileMenu
+						class="mobile-nav fixed left-0 top-16 flex h-[calc(100vh-4rem)] w-full flex-col gap-4 overflow-y-auto overscroll-contain border-t bg-background text-base-950 md:hidden"
 					>
-						{@render children()}
-						{@render cta()}
+						<ul class="flex flex-col p-6">
+							{@render children()}
+						</ul>
+						<ul
+							class="sticky bottom-0 left-0 mt-auto grid w-full grid-cols-2 gap-4 border-t bg-background/50 p-6 backdrop-blur-md"
+						>
+							{@render cta()}
+						</ul>
 					</div>
 				{/if}
 			</div>
@@ -98,7 +123,7 @@
 	</div>
 	<div class=" left-0 top-[calc(4rem-4px)] z-50 flex w-full justify-center overflow-hidden">
 		<NavigationMenu.Viewport
-			class="border-y data-[state=closed]:animate-scale-out data-[state=open]:animate-scale-in relative h-[var(--bits-navigation-menu-viewport-height)] w-full overflow-hidden bg-background text-popover-foreground shadow-lg md:w-[var(--bits-navigation-menu-viewport-width)]"
+			class="relative h-[var(--bits-navigation-menu-viewport-height)] w-full overflow-hidden border-y bg-background text-popover-foreground shadow-lg data-[state=closed]:animate-scale-out data-[state=open]:animate-scale-in md:w-[var(--bits-navigation-menu-viewport-width)]"
 		/>
 	</div>
 </NavigationMenu.Root>

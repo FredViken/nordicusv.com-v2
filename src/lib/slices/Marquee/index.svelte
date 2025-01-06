@@ -7,7 +7,6 @@
 
 	let { slice }: Props = $props();
 
-
 	const duplicateCount = 10;
 	let items = $derived([...slice.primary.items, ...slice.primary.items]);
 </script>
@@ -18,12 +17,12 @@
 	data-slice-variation={slice.variation}
 >
 	{#if slice.primary.heading}
-		<h2 class="mb-8 font-semibold">{slice.primary.heading}</h2>
+		<h2 class="mb-8 font-semibold text-muted-foreground">{slice.primary.heading}</h2>
 	{/if}
 	<Marquee speed={Number(slice.primary.speed)}>
 		<ul class="flex w-full gap-8 pr-8 md:gap-12 md:pr-12">
 			{#each items as item}
-				<li class="logo w-36 p-4 md:w-48 md:px-6 flex justify-center items-center">
+				<li class="logo flex w-36 items-center justify-center p-4 md:w-48 md:px-6">
 					<img class="w-full" src={item.image.url} alt={item.image.alt} />
 				</li>
 			{/each}

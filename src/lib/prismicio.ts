@@ -16,9 +16,9 @@ export const repositoryName = import.meta.env.VITE_PRISMIC_ENVIRONMENT || config
 const routes: prismic.ClientConfig['routes'] = [
 	// Examples:
 	{
-		type: "forside",
-		path: "/",
-	},
+		type: 'forside',
+		path: '/'
+	}
 	// {
 	// 	type: "page",
 	// 	path: "/:uid",

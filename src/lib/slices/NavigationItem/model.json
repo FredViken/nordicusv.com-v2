@@ -1,86 +1,86 @@
 {
-  "id": "navigation_item",
-  "type": "SharedSlice",
-  "name": "NavigationItem",
-  "description": "NavigationItem",
-  "variations": [
-    {
-      "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "link": {
-          "type": "Link",
-          "config": {
-            "label": "Link",
-            "placeholder": "",
-            "select": null,
-            "allowTargetBlank": true,
-            "allowText": true,
-            "repeat": false
-          }
-        }
-      },
-      "items": {}
-    },
-    {
-      "id": "withDropdown",
-      "name": "With dropdown",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "link": {
-          "type": "Link",
-          "config": {
-            "label": "Link",
-            "placeholder": "",
-            "select": null,
-            "allowTargetBlank": true,
-            "allowText": true,
-            "repeat": false
-          }
-        },
-        "description": {
-          "type": "Text",
-          "config": {
-            "label": "Description",
-            "placeholder": ""
-          }
-        },
-        "items": {
-          "type": "Group",
-          "config": {
-            "label": "Sub Menu",
-            "repeat": true,
-            "fields": {
-              "link": {
-                "type": "Link",
-                "config": {
-                  "label": "Link",
-                  "placeholder": "",
-                  "select": null,
-                  "allowTargetBlank": true,
-                  "allowText": true,
-                  "repeat": false
-                }
-              },
-              "icon": {
-                "type": "Text",
-                "config": {
-                  "label": "icon",
-                  "placeholder": ""
-                }
-              }
-            }
-          }
-        }
-      },
-      "items": {}
-    }
-  ]
+	"id": "navigation_item",
+	"type": "SharedSlice",
+	"name": "NavigationItem",
+	"description": "NavigationItem",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"link": {
+					"type": "Link",
+					"config": {
+						"label": "Link",
+						"placeholder": "",
+						"select": null,
+						"allowTargetBlank": true,
+						"allowText": true,
+						"repeat": false
+					}
+				}
+			},
+			"items": {}
+		},
+		{
+			"id": "withDropdown",
+			"name": "With dropdown",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"link": {
+					"type": "Link",
+					"config": {
+						"label": "Link",
+						"placeholder": "",
+						"select": null,
+						"allowTargetBlank": true,
+						"allowText": true,
+						"repeat": false
+					}
+				},
+				"description": {
+					"type": "Text",
+					"config": {
+						"label": "Description",
+						"placeholder": ""
+					}
+				},
+				"items": {
+					"type": "Group",
+					"config": {
+						"label": "Sub Menu",
+						"repeat": true,
+						"fields": {
+							"link": {
+								"type": "Link",
+								"config": {
+									"label": "Link",
+									"placeholder": "",
+									"select": null,
+									"allowTargetBlank": true,
+									"allowText": true,
+									"repeat": false
+								}
+							},
+							"icon": {
+								"type": "Text",
+								"config": {
+									"label": "icon",
+									"placeholder": ""
+								}
+							}
+						}
+					}
+				}
+			},
+			"items": {}
+		}
+	]
 }

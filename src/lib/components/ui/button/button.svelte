@@ -19,19 +19,19 @@
 				ghost: 'hover:bg-accent hover:text-accent-foreground hover:ring-0',
 				link: 'text-primary underline-offset-4 hover:underline hover:ring-0',
 				cta: 'bg-base-50 text-base-950 hover:bg-base-100 ring-base-50/50',
-				'cta-secondary': 'bg-base-950/15 dark:bg-base-50/25 backdrop-blur-md ',
+				'cta-secondary': 'bg-base-950/15 dark:bg-base-50/25 backdrop-blur-md '
 			},
 			size: {
 				default: 'px-4 py-2',
 				sm: 'h-9 rounded-md px-3',
 				lg: 'h-11 rounded-md px-6',
-				icon: 'h-10 w-10',
-			},
+				icon: 'h-10 w-10'
+			}
 		},
 		defaultVariants: {
 			variant: 'default',
-			size: 'default',
-		},
+			size: 'default'
+		}
 	});
 
 	export type ButtonVariant = VariantProps<typeof buttonVariants>['variant'];
@@ -47,7 +47,6 @@
 </script>
 
 <script lang="ts">
-
 	let {
 		class: className,
 		variant = 'default',

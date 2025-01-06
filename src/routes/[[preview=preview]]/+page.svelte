@@ -10,6 +10,4 @@
 	<title>{data.page.data.meta_title}</title>
 </svelte:head>
 
-
-
 <SliceZone slices={data.page.data.slices} {components} />

@@ -1,3 +1,3 @@
-<ul class="flex flex-col md:flex-row md:h-full">
-  <slot />
+<ul class="flex flex-col md:h-full md:flex-row">
+	<slot />
 </ul>

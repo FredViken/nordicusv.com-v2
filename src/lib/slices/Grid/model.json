@@ -1,0 +1,169 @@
+{
+  "id": "grid",
+  "type": "SharedSlice",
+  "name": "Grid",
+  "description": "Grid",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "columns": {
+          "type": "Text",
+          "config": {
+            "label": "Columns",
+            "placeholder": ""
+          }
+        },
+        "rows": {
+          "type": "Text",
+          "config": {
+            "label": "Rows",
+            "placeholder": ""
+          }
+        },
+        "fade_top": {
+          "type": "Boolean",
+          "config": {
+            "label": "Fade top",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "fade_bottom": {
+          "type": "Boolean",
+          "config": {
+            "label": "Fade bottom",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "items": {
+          "type": "Group",
+          "config": {
+            "label": "Items",
+            "repeat": true,
+            "fields": {
+              "alignment": {
+                "type": "Select",
+                "config": {
+                  "label": "Alignment",
+                  "placeholder": "",
+                  "options": [
+                    "left",
+                    "center",
+                    "right"
+                  ]
+                }
+              },
+              "icon": {
+                "type": "Text",
+                "config": {
+                  "label": "Badge icon",
+                  "placeholder": ""
+                }
+              },
+              "badge_text": {
+                "type": "Text",
+                "config": {
+                  "label": "Badge text",
+                  "placeholder": ""
+                }
+              },
+              "heading": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Heading",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading2,heading3,heading4,heading5,heading6"
+                }
+              },
+              "body": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Body",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "media": {
+                "type": "Select",
+                "config": {
+                  "label": "Media",
+                  "placeholder": "",
+                  "options": [
+                    "None",
+                    "Image",
+                    "Custom"
+                  ],
+                  "default_value": "None"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "column_span": {
+                "type": "Number",
+                "config": {
+                  "label": "Column span",
+                  "placeholder": ""
+                }
+              },
+              "row_span": {
+                "type": "Number",
+                "config": {
+                  "label": "Row span",
+                  "placeholder": ""
+                }
+              },
+              "shadow": {
+                "type": "Boolean",
+                "config": {
+                  "label": "Shadow",
+                  "placeholder_false": "false",
+                  "placeholder_true": "true",
+                  "default_value": false
+                }
+              },
+              "padding_x": {
+                "type": "Boolean",
+                "config": {
+                  "label": "Padding X",
+                  "placeholder_false": "false",
+                  "placeholder_true": "true",
+                  "default_value": true
+                }
+              },
+              "custom_media": {
+                "type": "Select",
+                "config": {
+                  "label": "Custom media",
+                  "placeholder": "",
+                  "options": [
+                    "buoys",
+                    "ctd"
+                  ],
+                  "default_value": "buoys"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

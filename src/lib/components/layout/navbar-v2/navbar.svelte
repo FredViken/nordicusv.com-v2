@@ -4,7 +4,7 @@
 	const navbarHeight = 64;
 	let scrollY: number;
 	let prevScrollY: number;
-  let innerWidth: number;
+	let innerWidth: number;
 	$: {
 		navState.update((state) => {
 			if (state.mobileExpanded) {
@@ -19,9 +19,9 @@
 		});
 		prevScrollY = scrollY;
 
-    if (innerWidth < 768) {
-      $navState.mobileExpanded = false;
-    };
+		if (innerWidth < 768) {
+			$navState.mobileExpanded = false;
+		}
 	}
 
 	function toggleMenu() {
@@ -63,7 +63,7 @@
 		</button>
 		{#if $navState.mobileExpanded}
 			<div
-				class="absolute left-0 top-full flex h-[calc(100vh-4rem)] w-full flex-col gap-4 border-t bg-background md:hidden px-6"
+				class="absolute left-0 top-full flex h-[calc(100vh-4rem)] w-full flex-col gap-4 border-t bg-background px-6 md:hidden"
 			>
 				<slot />
 			</div>
@@ -73,12 +73,11 @@
 
 <style lang="postcss">
 	nav {
-		@apply fixed top-0 z-50 w-full -translate-y-full text-background border-border;
+		@apply fixed top-0 z-50 w-full -translate-y-full border-border text-background;
 		transition:
 			background-color 0.9s,
 			transform 0.3s,
 			border 0.3s;
-			
 	}
 
 	nav > div {
@@ -86,7 +85,7 @@
 	}
 
 	nav.scrolled {
-		@apply py-0 border-b border-border/50 bg-background/75 text-foreground backdrop-blur-md;
+		@apply border-b border-border/50 bg-background/75 py-0 text-foreground backdrop-blur-md;
 	}
 
 	nav.visible {

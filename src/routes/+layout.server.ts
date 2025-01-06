@@ -7,6 +7,6 @@ export async function load({ fetch, cookies }) {
 	const settings = await client.getSingle('settings');
 
 	return {
-		settings: settings,
+		settings: settings
 	};
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { dropdownItemStyle } from ".";
+	import { dropdownItemStyle } from '.';
 
 	export let href = '#';
 	export let icon: string | null = null;
@@ -15,7 +15,9 @@
 				<slot />
 			</span>
 		</span>
-    <i class="far fa-arrow-right hidden md:block opacity-0 group-hover:opacity-100 duration-500 ease-in-out -translate-x-4 group-hover:-translate-x-0"/>
+		<i
+			class="far fa-arrow-right hidden -translate-x-4 opacity-0 duration-500 ease-in-out group-hover:-translate-x-0 group-hover:opacity-100 md:block"
+		/>
 	</a>
 </li>
 

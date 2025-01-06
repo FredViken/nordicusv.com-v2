@@ -3,7 +3,7 @@
 	import { PrismicImage, PrismicLink } from '@prismicio/svelte';
 	import { buttonVariants } from '$lib/components/ui/button';
 	import { cn } from '$utils';
-	import { animate, scroll } from 'motion';
+	import { animate, scroll, stagger } from 'motion';
 	import { onMount } from 'svelte';
 
 	interface Props {
@@ -26,6 +26,15 @@
 				offset: ['start start', 'end start']
 			});
 		}
+
+		animate(
+			'.hero .stagger-item',
+			{
+				opacity: [0, 1],
+				y: [30, 0]
+			},
+			{ delay: stagger(0.15), duration: 0.5 }
+		);
 	});
 </script>
 
@@ -61,7 +70,7 @@
 	{/if}
 
 	<!-- Content -->
-	<div class="container relative mx-auto py-24 text-brand-950 dark:text-white">
+	<div class="hero container relative mx-auto py-24 text-brand-950 dark:text-white">
 		<div
 			class="flex max-w-2xl flex-col {alignment == 'center'
 				? 'mx-auto items-center text-center'
@@ -70,19 +79,21 @@
 					: 'mr-auto items-start text-left'}"
 		>
 			{#if slice.primary.heading}
-				<h1 class="mb-4 scroll-m-20 text-balance text-3xl font-semibold tracking-tight lg:text-4xl">
+				<h1
+					class="stagger-item mb-4 scroll-m-20 text-balance text-3xl font-semibold tracking-tight lg:text-4xl"
+				>
 					{slice.primary.heading}
 				</h1>
 			{/if}
 
 			{#if slice.primary.subheading}
-				<p class="mb-8 text-pretty text-xl text-muted-foreground">
+				<p class="stagger-item mb-8 text-pretty text-xl text-muted-foreground">
 					{slice.primary.subheading}
 				</p>
 			{/if}
 
 			<div
-				class="flex flex-wrap gap-4 justify-{alignment === 'center'
+				class="stagger-item flex flex-wrap gap-4 justify-{alignment === 'center'
 					? 'center'
 					: alignment === 'right'
 						? 'end'

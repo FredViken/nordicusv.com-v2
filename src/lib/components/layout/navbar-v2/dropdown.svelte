@@ -3,7 +3,7 @@
 	import { quadInOut } from 'svelte/easing';
 	import { itemStyle, itemStyleScrolled, navState } from './index';
 	import { Button } from '$lib/components/ui/button';
-	import * as Collapsible from "$lib/components/ui/collapsible";
+	import * as Collapsible from '$lib/components/ui/collapsible';
 	export let href: string = '#';
 	export let description: string = '';
 
@@ -28,7 +28,10 @@
 	on:mouseleave={closeDropdown}
 >
 	<a {href} class="{itemStyle} {scrolled ? itemStyleScrolled : ''}">
-		<slot /> <i class="far fa-chevron-down duration-200 ml-1 {$navState.dropdown == href ? 'rotate-180': ''}"></i>
+		<slot />
+		<i
+			class="far fa-chevron-down ml-1 duration-200 {$navState.dropdown == href ? 'rotate-180' : ''}"
+		></i>
 	</a>
 	{#if $navState.dropdown === href}
 		<div
@@ -48,24 +51,19 @@
 	{/if}
 </li>
 
-<li class="md:hidden border-b">
+<li class="border-b md:hidden">
 	<Collapsible.Root>
-		<Collapsible.Trigger class="w-full flex justify-between items-baseline {itemStyle} border-b-0">
+		<Collapsible.Trigger class="flex w-full items-baseline justify-between {itemStyle} border-b-0">
 			<slot />
 			<i class="far ml-full fa-chevron-down" />
 		</Collapsible.Trigger>
 		<Collapsible.Content class="py-4">
-		
-
-				<ul class="">
-					<slot name="content"></slot>
-				</ul>
-
+			<ul class="">
+				<slot name="content"></slot>
+			</ul>
 		</Collapsible.Content>
 	</Collapsible.Root>
-
 </li>
-
 
 <!-- <li class="flex md:hidden">
 	<button on:click={openDropdown}>
