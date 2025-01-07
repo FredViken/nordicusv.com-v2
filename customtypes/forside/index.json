@@ -20,7 +20,7 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
-						"grid": {
+						"bento_grid": {
 							"type": "SharedSlice"
 						},
 						"marquee": {

@@ -1,0 +1,173 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"rows": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "auto 1fr"
+			},
+			"items": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"column_span",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Number",
+									"value": "2"
+								}
+							],
+							[
+								"row_span",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Number",
+									"value": "1"
+								}
+							],
+							[
+								"heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading2",
+											"content": {
+												"text": "wdwd",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"alignment",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "right",
+									"type": "Select"
+								}
+							],
+							[
+								"body",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Fugiat laboris Lorem id enim."
+											}
+										}
+									]
+								}
+							],
+							[
+								"column_span",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Number",
+									"value": "1"
+								}
+							],
+							[
+								"row_span",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Number",
+									"value": "1"
+								}
+							],
+							[
+								"media",
+								{
+									"key": "4c9379db-ca9f-49ef-88e4-7b7ce348eb9b",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "FileLink",
+										"id": "mock_Media_link",
+										"kind": "file",
+										"name": "mock_name",
+										"url": "https://source.unsplash.com/daily",
+										"size": "0",
+										"text": "easy"
+									}
+								}
+							],
+							[
+								"heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading2",
+											"content": {
+												"text": "Test",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading2",
+											"content": {
+												"text": "Test 2",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							],
+							[
+								"column_span",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Number",
+									"value": "1"
+								}
+							],
+							[
+								"row_span",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Number",
+									"value": "1"
+								}
+							]
+						]
+					}
+				]
+			},
+			"columns": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "1fr 1fr"
+			}
+		},
+		"items": []
+	}
+]

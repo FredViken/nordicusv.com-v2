@@ -68,7 +68,7 @@ export type BruksomraderDocument<Lang extends string = string> = prismic.Prismic
 	Lang
 >;
 
-type ForsideDocumentDataSlicesSlice = GridSlice | MarqueeSlice | HeroSlice;
+type ForsideDocumentDataSlicesSlice = BentoGridSlice | MarqueeSlice | HeroSlice;
 
 /**
  * Content for Forside documents
@@ -202,217 +202,132 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 export type AllDocumentTypes = BruksomraderDocument | ForsideDocument | SettingsDocument;
 
 /**
- * Item in *Grid → Default → Primary → Items*
+ * Item in *BentoGrid → Default → Primary → Items*
  */
-export interface GridSliceDefaultPrimaryItemsItem {
+export interface BentoGridSliceDefaultPrimaryItemsItem {
 	/**
-	 * Alignment field in *Grid → Default → Primary → Items*
+	 * Alignment field in *BentoGrid → Default → Primary → Items*
 	 *
 	 * - **Field Type**: Select
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: grid.default.primary.items[].alignment
+	 * - **Default Value**: center
+	 * - **API ID Path**: bento_grid.default.primary.items[].alignment
 	 * - **Documentation**: https://prismic.io/docs/field#select
 	 */
-	alignment: prismic.SelectField<'left' | 'center' | 'right'>;
+	alignment: prismic.SelectField<'center' | 'left' | 'right', 'filled'>;
 
 	/**
-	 * Badge icon field in *Grid → Default → Primary → Items*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: grid.default.primary.items[].icon
-	 * - **Documentation**: https://prismic.io/docs/field#key-text
-	 */
-	icon: prismic.KeyTextField;
-
-	/**
-	 * Badge text field in *Grid → Default → Primary → Items*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: grid.default.primary.items[].badge_text
-	 * - **Documentation**: https://prismic.io/docs/field#key-text
-	 */
-	badge_text: prismic.KeyTextField;
-
-	/**
-	 * Heading field in *Grid → Default → Primary → Items*
+	 * Heading field in *BentoGrid → Default → Primary → Items*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: grid.default.primary.items[].heading
+	 * - **API ID Path**: bento_grid.default.primary.items[].heading
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	heading: prismic.RichTextField;
 
 	/**
-	 * Body field in *Grid → Default → Primary → Items*
+	 * Body field in *BentoGrid → Default → Primary → Items*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: grid.default.primary.items[].body
+	 * - **API ID Path**: bento_grid.default.primary.items[].body
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	body: prismic.RichTextField;
 
 	/**
-	 * Media field in *Grid → Default → Primary → Items*
+	 * Media field in *BentoGrid → Default → Primary → Items*
 	 *
-	 * - **Field Type**: Select
+	 * - **Field Type**: Link to Media
 	 * - **Placeholder**: *None*
-	 * - **Default Value**: None
-	 * - **API ID Path**: grid.default.primary.items[].media
-	 * - **Documentation**: https://prismic.io/docs/field#select
+	 * - **API ID Path**: bento_grid.default.primary.items[].media
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	media: prismic.SelectField<'None' | 'Image' | 'Custom', 'filled'>;
+	media: prismic.LinkToMediaField;
 
 	/**
-	 * Image field in *Grid → Default → Primary → Items*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: grid.default.primary.items[].image
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	image: prismic.ImageField<never>;
-
-	/**
-	 * Column span field in *Grid → Default → Primary → Items*
+	 * Column span field in *BentoGrid → Default → Primary → Items*
 	 *
 	 * - **Field Type**: Number
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: grid.default.primary.items[].column_span
+	 * - **API ID Path**: bento_grid.default.primary.items[].column_span
 	 * - **Documentation**: https://prismic.io/docs/field#number
 	 */
 	column_span: prismic.NumberField;
 
 	/**
-	 * Row span field in *Grid → Default → Primary → Items*
+	 * Row span field in *BentoGrid → Default → Primary → Items*
 	 *
 	 * - **Field Type**: Number
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: grid.default.primary.items[].row_span
+	 * - **API ID Path**: bento_grid.default.primary.items[].row_span
 	 * - **Documentation**: https://prismic.io/docs/field#number
 	 */
 	row_span: prismic.NumberField;
-
-	/**
-	 * Shadow field in *Grid → Default → Primary → Items*
-	 *
-	 * - **Field Type**: Boolean
-	 * - **Placeholder**: *None*
-	 * - **Default Value**: false
-	 * - **API ID Path**: grid.default.primary.items[].shadow
-	 * - **Documentation**: https://prismic.io/docs/field#boolean
-	 */
-	shadow: prismic.BooleanField;
-
-	/**
-	 * Padding X field in *Grid → Default → Primary → Items*
-	 *
-	 * - **Field Type**: Boolean
-	 * - **Placeholder**: *None*
-	 * - **Default Value**: true
-	 * - **API ID Path**: grid.default.primary.items[].padding_x
-	 * - **Documentation**: https://prismic.io/docs/field#boolean
-	 */
-	padding_x: prismic.BooleanField;
-
-	/**
-	 * Custom media field in *Grid → Default → Primary → Items*
-	 *
-	 * - **Field Type**: Select
-	 * - **Placeholder**: *None*
-	 * - **Default Value**: buoys
-	 * - **API ID Path**: grid.default.primary.items[].custom_media
-	 * - **Documentation**: https://prismic.io/docs/field#select
-	 */
-	custom_media: prismic.SelectField<'buoys' | 'ctd', 'filled'>;
 }
 
 /**
- * Primary content in *Grid → Default → Primary*
+ * Primary content in *BentoGrid → Default → Primary*
  */
-export interface GridSliceDefaultPrimary {
+export interface BentoGridSliceDefaultPrimary {
 	/**
-	 * Columns field in *Grid → Default → Primary*
+	 * columns field in *BentoGrid → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: grid.default.primary.columns
+	 * - **API ID Path**: bento_grid.default.primary.columns
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	columns: prismic.KeyTextField;
 
 	/**
-	 * Rows field in *Grid → Default → Primary*
+	 * rows field in *BentoGrid → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: grid.default.primary.rows
+	 * - **API ID Path**: bento_grid.default.primary.rows
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	rows: prismic.KeyTextField;
 
 	/**
-	 * Fade top field in *Grid → Default → Primary*
-	 *
-	 * - **Field Type**: Boolean
-	 * - **Placeholder**: *None*
-	 * - **Default Value**: false
-	 * - **API ID Path**: grid.default.primary.fade_top
-	 * - **Documentation**: https://prismic.io/docs/field#boolean
-	 */
-	fade_top: prismic.BooleanField;
-
-	/**
-	 * Fade bottom field in *Grid → Default → Primary*
-	 *
-	 * - **Field Type**: Boolean
-	 * - **Placeholder**: *None*
-	 * - **Default Value**: false
-	 * - **API ID Path**: grid.default.primary.fade_bottom
-	 * - **Documentation**: https://prismic.io/docs/field#boolean
-	 */
-	fade_bottom: prismic.BooleanField;
-
-	/**
-	 * Items field in *Grid → Default → Primary*
+	 * Items field in *BentoGrid → Default → Primary*
 	 *
 	 * - **Field Type**: Group
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: grid.default.primary.items[]
+	 * - **API ID Path**: bento_grid.default.primary.items[]
 	 * - **Documentation**: https://prismic.io/docs/field#group
 	 */
-	items: prismic.GroupField<Simplify<GridSliceDefaultPrimaryItemsItem>>;
+	items: prismic.GroupField<Simplify<BentoGridSliceDefaultPrimaryItemsItem>>;
 }
 
 /**
- * Default variation for Grid Slice
+ * Default variation for BentoGrid Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type GridSliceDefault = prismic.SharedSliceVariation<
+export type BentoGridSliceDefault = prismic.SharedSliceVariation<
 	'default',
-	Simplify<GridSliceDefaultPrimary>,
+	Simplify<BentoGridSliceDefaultPrimary>,
 	never
 >;
 
 /**
- * Slice variation for *Grid*
+ * Slice variation for *BentoGrid*
  */
-type GridSliceVariation = GridSliceDefault;
+type BentoGridSliceVariation = BentoGridSliceDefault;
 
 /**
- * Grid Shared Slice
+ * BentoGrid Shared Slice
  *
- * - **API ID**: `grid`
- * - **Description**: Grid
+ * - **API ID**: `bento_grid`
+ * - **Description**: BentoGrid
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type GridSlice = prismic.SharedSlice<'grid', GridSliceVariation>;
+export type BentoGridSlice = prismic.SharedSlice<'bento_grid', BentoGridSliceVariation>;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -856,11 +771,11 @@ declare module '@prismicio/client' {
 			SettingsDocumentData,
 			SettingsDocumentDataSlicesSlice,
 			AllDocumentTypes,
-			GridSlice,
-			GridSliceDefaultPrimaryItemsItem,
-			GridSliceDefaultPrimary,
-			GridSliceVariation,
-			GridSliceDefault,
+			BentoGridSlice,
+			BentoGridSliceDefaultPrimaryItemsItem,
+			BentoGridSliceDefaultPrimary,
+			BentoGridSliceVariation,
+			BentoGridSliceDefault,
 			HeroSlice,
 			HeroSliceDefaultPrimary,
 			HeroSliceWithVideoPrimary,
