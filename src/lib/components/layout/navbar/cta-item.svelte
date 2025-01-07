@@ -12,7 +12,7 @@
 	let hovered = $state(false);
 
 	const styles = {
-		base: 'group rounded-md inline-flex items-center justify-center text-sm active:scale-95 px-3 py-2 duration-300 text-nowrap w-full text-center md:w-auto md:text-left',
+		base: 'group rounded-md inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 ring-offset-1 justify-center text-sm active:scale-95 px-3 py-2 duration-300 text-nowrap w-full text-center md:w-auto md:text-left',
 		variants: {
 			theme: {
 				light: {

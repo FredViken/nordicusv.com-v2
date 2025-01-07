@@ -2,6 +2,7 @@
 	import { cn } from '$utils';
 	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
+	import type { ClassNameValue } from 'tailwind-merge';
 	import { type VariantProps, tv } from 'tailwind-variants';
 
 	export const buttonVariants = tv({
@@ -41,6 +42,7 @@
 		WithElementRef<HTMLAnchorAttributes> & {
 			variant?: ButtonVariant;
 			size?: ButtonSize;
+			class?: ClassNameValue;
 			loading?: boolean;
 			loadingText?: string;
 		};

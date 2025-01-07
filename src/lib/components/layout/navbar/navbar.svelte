@@ -31,7 +31,7 @@
 		},
 		background: {
 			transparent: 'bg-transparent',
-			solid: 'bg-base-50/75 text-base-950 backdrop-blur-md shadow-sm'
+			solid: 'bg-base-50/75 text-base-950 backdrop-blur-sm shadow-sm'
 		}
 	};
 
